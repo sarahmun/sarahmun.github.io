@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme = "light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>site</title>
+    <title>To Do List</title>
+    <link rel="icon" href="./img/list-alt-regular.svg" >
+    <link rel="stylesheet" href="./main.css">
 </head>
-<body>
-    <h1>my first github pages website i realy like it
-    </h1>
+<body onload="restore()">
+    <div class="container">
+
+        <nav>
+            
+            <button> <!--mood indecator-->
+                <input type="checkbox" name="" id="#theme">
+                <label for="#theme" class="label">
+                    <i class="fas fa-sun" id="sun"></i> 
+                    <i class="fas fa-moon" id="moon"></i>
+                </label>
+            </button> <!--end mood indecator-->
+            <h1>To Do List</h1>
+            <button onclick="clearAll()"><i class="far fa-trash-alt"></i></button> 
+            
+        </nav>
+
+        <div class="tasks">
+            <div  id="task">
+                <input type="checkbox" name="" id="done">
+                <h2>u</h2>
+                <!-- <button class="edit"><i class="far fa-edit"></i></button> -->
+                <button class="minus" onclick="return this.parentNode.remove();" onmousedown="clearThis(this)"><i class="fas fa-minus"></i></button>
+            </div>
+            
+        </div>
+
+        <div class="add">
+            <input type="text" placeholder="E.g. feed the cat !" id="main-input">
+            <button onclick="addTask()"><i class="fas fa-plus"></i></button>
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/06f4d329d3.js" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

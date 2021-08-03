@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Slab:wght@200;400;600&display=swap');
+
+/* general */
+html{height: 100%;}
+html[data-theme='light'] {
+    --bg-color-light: #90edff;
+    --bg-color-dark:#0ab3d4;
+    --color-text:#34526A;
+    --none: none;
+    --inline: inline;
+    
+}
+html[data-theme='dark'] {
+    --bg-color-light: #4b79a1;
+    --bg-color-dark:#283E51;
+    --color-text:#34526A;
+    --none: inline;
+    --inline: none;
+}
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body {
+	background: linear-gradient(-45deg,var(--bg-color-dark),var(--bg-color-light) );
+	background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "josefin Slab";
+    scroll-behavior: smooth;
+    height: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    max-width: 1000px;
+    /* padding: 20px 10px; */
+    /* overflow: hidden; */
+}
+button{transition: background-color .3s ease-out}
+
+/* navigation */
+
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    color: var(--color-text);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px 20px 0 0;
+    padding: 5px 0;
+}
+nav input{display: none;}
+nav button{
+    background-color: transparent;
+    border: none;
+    font-size: 23px;
+    color: var(--color-text);
+    /* padding: 8px 11px; */
+    border-radius: 50%;
+    height: 40px; width: 40px;
+}
+#sun{display: var(--none); }
+#moon{display: var(--inline);}
+h1{padding: 8px 0;}
+/* nav{overflow: visible;} */
+
+nav button:hover{background-color: rgba(255, 255, 255, 0.6);}
+nav button:active{color: var(--bg-color-dark);}
+nav .fa-trash-alt:active{color: rgb(255, 93, 93);}
+#sun:active{color:rgb(255, 193, 79) ;}
+
+/* input footer */
+
+.add{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 0 20px 20px;
+
+}
+.add input{
+    flex: 1;
+    margin: 0 10px 0 10px;
+    /* outline: none; */
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text);
+    padding-left: 0px;
+    width: auto;
+    flex: 1;
+    min-width: none;
+    width: 200px;
+}
+.add input::placeholder{
+    padding-left: 10px;
+    color: rgb(80, 80, 80);
+    font-family: "josefin Slab";
+    font-size: 18px;
+    
+}
+.add input:focus{
+    border: 3px solid white;
+    outline: none;
+    padding-left: 12px;
+    color: var(--color-text);
+}
+/* .add input:disabled{
+    color: red;
+} */
+.add button{
+    background-color: transparent;
+    border: none;
+    font-size: 23px;
+    color: var(--color-text);
+    margin: 0 10px 0 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.add button:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.add button:active{color: rgb(56, 230, 56);}
+
+/* tasks */
+
+.tasks{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction:row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap-reverse;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    /* flex: 1; */
+    padding: 7px ;
+    /* flex-wrap: wrap; */
+    /* background-color: orange; */
+    /* float: left; */
+    position: relative;
+    /* width: 200px; */
+    flex-wrap: wrap;
+    
+
+}
+#task{display: none;}
+::-webkit-scrollbar{width: 3px;} 
+::-webkit-scrollbar-thumb{background-color: white; border-radius: 10px;} 
+
+.tasks div{
+    float: left;
+    /* overflow-y: scroll; */
+    display: flex;
+    min-height: 60px;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 5px; 
+    padding: 0 10px;
+    border-radius: 10px;
+    font-family: Amatic SC;
+    transition: all .3s ease-in-out;
+    
+}
+.tasks div h2{
+    /* background-color: royalblue; */
+    flex: 1;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+.tasks div button{
+    height: 40px; width: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--color-text);
+    border-radius: 50%;
+}
+.tasks div button:hover{background-color: rgba(255, 255, 255, 0.8);}
+.tasks .minus{margin-left: 5px;}
+.tasks .minus:active{color: rgb(255, 93, 93);}
+.tasks .edit:active{color: rgb(56, 230, 56);}
+.tasks input{
+    border-radius: 50%;
+}
